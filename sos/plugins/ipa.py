@@ -72,9 +72,10 @@ class Ipa(Plugin, RedHatPlugin):
 
         self.add_cmd_output([
             "ls -la /etc/dirsrv/slapd-*/schema/",
-            "ipa-getcert list",
+            "getcert list",
             "certutil -L -d /etc/httpd/alias/",
             "certutil -L -d /etc/dirsrv/slapd-*/",
+            "certutil -L -d /var/lib/pki-ca/alias",
             "klist -ket /etc/dirsrv/ds.keytab",
             "klist -ket /etc/httpd/conf/ipa.keytab"
         ])
